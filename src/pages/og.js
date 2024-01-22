@@ -3,6 +3,10 @@ export const prerender = false;
 import { ImageResponse } from "@vercel/og";
 import { html } from "satori-html";
 
+export const config = {
+  runtime: "edge",
+};
+
 export const GET = async ({ url }) => {
   const title = url.searchParams.get("title");
   const origin = new URL(url).origin;
