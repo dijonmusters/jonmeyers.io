@@ -2,7 +2,7 @@ import { defineConfig } from "astro/config";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwind from "@astrojs/tailwind";
-import vercel from "@astrojs/vercel/static";
+import vercel from "@astrojs/vercel/serverless";
 
 import react from "@astrojs/react";
 
@@ -10,6 +10,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://jonmeyers.io",
   integrations: [mdx(), sitemap(), tailwind(), react()],
-  output: "static",
+  output: "server",
   adapter: vercel(),
 });
