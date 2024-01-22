@@ -1,0 +1,30 @@
+[x] Mobile (KISS) - stop that horizontal scroll
+[x] Landing page
+[x] List of Blogs page
+[x] Add visual separation between blogs in list view
+[x] Shared element transitions
+[x] Favicon
+[x] Wrap landing page div in <a> that links to `/blog`
+[x] Move blog posts over to mdx - use code blocks over images where possible - put images in `/public/blog/[blog-name]/[image-name]`
+[x] Make sure blog list looks correct
+[x] Make sure every blog page looks correct
+[x] Courses page
+[x] Newsletter page
+[x] Implement ToC MDX component for the series of blogs
+[x] Image tag optimisation
+
+[ ] Launch
+
+[ ] Write about interesting things
+[ ] Add Lee's "course" to course page (once 2nd video is published and it is a playlist)
+
+[ ] Request content
+[ ] Shareable code snippet based on url - Fast way might just be content mdx files that have a code snippet of a particular language
+[ ] Add tag pills that link to all articles for that tag
+[ ] Implement reactions
+[ ] Look at optimising images - Next Image style
+[ ] Add a site-wide banner
+[ ] Implement next best action
+[ ] Replace favicon with gradient version
+[ ] Add better (funnier) 404 page
+[ ] Kunami code to start playing Supabase Album
