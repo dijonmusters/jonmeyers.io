@@ -11,5 +11,7 @@ export default defineConfig({
   site: "https://jonmeyers.io",
   integrations: [mdx(), sitemap(), tailwind(), react()],
   output: "hybrid",
-  adapter: vercel(),
+  adapter: vercel({
+    edgeMiddleware: true,
+  }),
 });
