@@ -1,3 +1,5 @@
+export const prerender = false;
+
 import { ImageResponse } from "@vercel/og";
 import { html } from "satori-html";
 

@@ -10,6 +10,6 @@ import react from "@astrojs/react";
 export default defineConfig({
   site: "https://jonmeyers.io",
   integrations: [mdx(), sitemap(), tailwind(), react()],
-  output: "server",
+  output: "hybrid",
   adapter: vercel(),
 });
