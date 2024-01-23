@@ -33,7 +33,7 @@ const { title, og_title, description } = Astro.props;
 <meta property="og:description" content={description} />
 <meta
   property="og:image"
-  content={`${new URL(Astro.url).origin}/og?title=${og_title}`}
+  content={`https://jonmeyers-io-og.vercel.app/?title=${og_title}`}
 />
 
 <!-- Twitter -->
@@ -43,7 +43,7 @@ const { title, og_title, description } = Astro.props;
 <meta property="twitter:description" content={description} />
 <meta
   property="twitter:image"
-  content={`${new URL(Astro.url).origin}/og?title=${og_title}`}
+  content={`https://jonmeyers-io-og.vercel.app/?title=${og_title}`}
 />
 
 <!-- View Transitions -->
