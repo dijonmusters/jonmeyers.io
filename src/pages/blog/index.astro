@@ -8,7 +8,11 @@ const posts = (await getCollection("blog")).sort(
 );
 ---
 
-<BaseLayout>
+<BaseLayout
+  title="Blog"
+  decription="A blog to save you more time than I did"
+  og_title="A blog to save you more time than I did"
+>
   <main class="mx-auto flex-1 mt-10 md:mt-20 max-w-[65ch] p-4">
     <ul>
       {
