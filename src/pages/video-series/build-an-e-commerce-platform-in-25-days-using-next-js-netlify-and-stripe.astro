@@ -1,0 +1,34 @@
+---
+import BaseLayout from "../../layouts/base.astro";
+import ToC from "../../components/ToC.astro";
+
+const title =
+  "Build an E-commerce platform in 25 days using Next.js, Netlify and Stripe";
+const description =
+  "In this course we are going to create an online store using Next.js, Netlify and Stripe. We will learn some React basics - components, state, props, hooks - a crash course in Next.js - file-based routing, dynamic routes, static site generation (SSG) - how to style an application using Styled Components, and finally how to charge a card using Stripe. Along the way we will also cover deploying an application, preview deploys, secrets in Netlify, CSS and so much more! Let's get started!";
+const og_title =
+  "Build an E-commerce platform in 25 days using Next.js, Netlify and Stripe";
+---
+
+<BaseLayout title={title} description={description} og_title={og_title}>
+  <main
+    class="prose dark:prose-invert w-full mx-auto flex-1 my-10 p-2 md:my-20"
+  >
+    <h1 class="text-2xl md:text-3xl font-bold leading-normal mb-12">
+      {title}
+    </h1>
+
+    <iframe
+      width="560"
+      height="315"
+      src="https://www.youtube.com/embed/videoseries?si=lvCzI7GSSOwdz7p8&list=PLFGFKs8nQ3EbG-ykV8xc1mBt99sqq2Ssx"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen></iframe>
+
+    <p class="mt-10">
+      {description}
+    </p>
+  </main>
+</BaseLayout>

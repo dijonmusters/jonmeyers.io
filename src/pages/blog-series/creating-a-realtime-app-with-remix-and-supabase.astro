@@ -1,0 +1,57 @@
+---
+import BaseLayout from "../../layouts/base.astro";
+import ToC from "../../components/ToC.astro";
+
+const title = "Creating a realtime app with Remix and Supabase";
+const description =
+  "In this series, we look at building a Remix application with a Supabase back-end. We cover creating a Supabase client on both the client and server, using environment variables, authentication and cookies, authorization with row level security, and subscribing to realtime events to update the UI when data changes in Supabase.";
+const og_title = "Creating a realtime app with Remix and Supabase";
+---
+
+<BaseLayout title={title} description={description} og_title={og_title}>
+  <main
+    class="prose dark:prose-invert w-full mx-auto flex-1 my-10 p-2 md:my-20"
+  >
+    <h1 class="text-2xl md:text-3xl font-bold leading-normal mb-12">
+      {title}
+    </h1>
+    <ToC
+      list={[
+        {
+          title:
+            "Create an isomorphic Supabase client in Remix with Environment Variables",
+          url: "/blog/create-an-isomorphic-supabase-client-in-remix-with-environment-variables/",
+        },
+        {
+          title: "Add authentication to Remix and Supabase app",
+          url: "/blog/add-authentication-to-remix-and-supabase-app",
+        },
+      ]}
+    />
+    <p>
+      In this series, we look at building a Remix application with a Supabase
+      back-end.
+    </p>
+
+    <p>
+      We cover:
+      <ul>
+        <li>creating a Supabase client on both the client and server</li>
+        <li>using environment variables</li>
+        <li>authentication and cookies</li>
+        <li>authorization with Row Level Security (RLS) policies</li>
+        <li>
+          subscribing to realtime events to update the UI when data changes in
+          Supabase.
+        </li>
+      </ul>
+    </p>
+
+    <p>
+      If you want to go deeper on Remix and Supabase check out [my new Level Up
+      Tutorials
+      course](https://leveluptutorials.com/tutorials/realtime-remix-with-supabase)
+      where we build a realtime chat application from scratch 🚀
+    </p>
+  </main>
+</BaseLayout>
