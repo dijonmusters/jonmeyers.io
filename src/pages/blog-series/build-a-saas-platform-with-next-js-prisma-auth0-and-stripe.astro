@@ -1,0 +1,77 @@
+---
+import BaseLayout from "../../layouts/base.astro";
+import ToC from "../../components/ToC.astro";
+
+const title =
+  "Build a SaaS Platform with Next.js, Prisma, Auth0 and Stripe (series)";
+const description =
+  "In this series we are going to create an application with subscription-based billing. We will be using Next.js, Vercel, Prisma, Supabase, Auth0 and Stripe to build a network of services that stay in sync via change events sent as webhooks. We will be covering static site generation (SSG) vs serverside rendering (SSR), application hosting, environment variables, authentication, authorisation, social login with GitHub, schema design, migrations, relationships between tables, queries with joins across tables, serverless functions, charging for an individual item, recurring subscription payments, customer portals and so much more!";
+const og_title =
+  "Build a SaaS Platform with Next.js, Prisma, Auth0 and Stripe (series)";
+---
+
+<BaseLayout title={title} description={description} og_title={og_title}>
+  <main
+    class="prose dark:prose-invert w-full mx-auto flex-1 my-10 p-2 md:my-20"
+  >
+    <h1 class="text-2xl md:text-3xl font-bold leading-normal mb-12">
+      {title}
+    </h1>
+    <ToC
+      list={[
+        {
+          title: "Tech stack and initial project setup",
+          url: "/blog/tech-stack-and-initial-project-setup",
+        },
+        {
+          title:
+            "Hosting on Vercel, automatic deploys with GitHub and configuring custom domains",
+          url: "/blog/hosting-on-vercel-automatic-deploys-with-github-and-configuring-custom-domains",
+        },
+        {
+          title: "Authentication with Auth0 and Next.js",
+          url: "/blog/authentication-with-auth0-and-next-js",
+        },
+        {
+          title: "Social login with GitHub and Auth0 rules",
+          url: "/blog/social-login-with-github-and-auth0-rules",
+        },
+        {
+          title: "Processing payments with Stripe and webhooks",
+          url: "/blog/processing-payments-with-stripe-and-webhooks",
+        },
+        {
+          title: "Implementing subscriptions with Stripe",
+          url: "/blog/implementing-subscriptions-with-stripe",
+        },
+      ]}
+    />
+    <p>
+      In this series we are going to create an application with
+      subscription-based billing. We will be using Next.js, Vercel, Prisma,
+      Supabase, Auth0 and Stripe to build a network of services that stay in
+      sync via change events sent as webhooks.
+    </p>
+
+    <p>
+      We will be covering:
+      <ul>
+        <li>static site generation (SSG) vs serverside rendering (SSR)</li>
+        <li>application hosting</li>
+        <li>environment variables</li>
+        <li>authentication</li>
+        <li>authorization</li>
+        <li>social login with GitHub</li>
+        <li>schema design</li>
+        <li>migrations</li>
+        <li>relationships between tables</li>
+        <li>queries with joins across tables</li>
+        <li>serverless functions</li>
+        <li>charging for an individual item</li>
+        <li>recurring subscription payments</li>
+        <li>customer portals</li>
+        <li>and so much more!</li>
+      </ul>
+    </p>
+  </main>
+</BaseLayout>
