@@ -1,0 +1,25 @@
+---
+type Props = {
+  id: string;
+};
+
+const { id } = Astro.props;
+
+if (!id) {
+  console.log(
+    `No ID provided for the <YouTubeVideo /> component on ${Astro.url.pathname}`
+  );
+}
+---
+
+{
+  id && (
+    <iframe
+      class="w-full aspect-video rounded-md"
+      src={`https://www.youtube-nocookie.com/embed/${id}`}
+      frame-border="0"
+      allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    />
+  )
+}
