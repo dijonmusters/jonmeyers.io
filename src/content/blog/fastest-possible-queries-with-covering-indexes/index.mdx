@@ -1,0 +1,87 @@
+---
+title: Query Postgres Data in the Fastest Way Possible with Covering Indexes
+og_title: Query Postgres Data in the Fastest Way Possible with Covering Indexes
+description: Learn how to drastically speed up your PostgreSQL queries with Covering Indexes in this comprehensive tutorial. Discover the fundamentals of Indexes, step-by-step instructions to create Covering Indexes, and how to benchmark your performance improvements. This guide transforms complex concepts into easy-to-follow steps that you can apply to your own database-driven applications.
+published_date: 2024-07-09
+tags:
+  - PostgreSQL
+  - Indexing
+---
+
+import YouTubeVideo from "../../../components/YouTubeVideo.astro";
+
+<YouTubeVideo id="bLxJDXqr5sI" />
+
+Are your PostgreSQL queries running slower than you'd like? In this tutorial, I'll show you how to significantly boost your query performance by using Covering Indexes. Don't worry if you're not familiar with this concept yet; I'll break it down into simple, understandable steps.
+
+## What Are Covering Indexes?
+
+Indexes in databases are like the Index in a book – they help you find data quickly without having to read through every single page. A Covering Index goes a step further by containing all the data required to satisfy a query, eliminating the need for additional lookups to the main table.
+
+## Creating a Basic Index
+
+To create a regular Index in PostgreSQL, you can use the following command:
+
+```sql
+create index
+  on people (username)
+```
+
+This creates an index on the `username` column of the `people` table. Postgres knows how to search for data in this Index very very quickly. So given this query:
+
+```sql
+select *
+  from people
+  where username = 'alice'
+```
+
+Postgres will use our Index to find any rows where the `username` column is `alice`, but since we are selecting all of the columns from that row – with the `*` symbol – Postgres will need to lookup the additional columns from the original `people` table.
+
+## Covering Indexes?
+
+Imagine you have a `people` table with over 10 million rows, and you want to be able to search for someone by their username, and also get back their email. Something like this:
+
+```sql
+select username, email
+  from people
+  where username = 'jon'
+```
+
+Our Index will help to quickly find all of the people with that particular `username`, but if this is a significantly large result set, then fetching the `email` for every one of those people could grind this query to a halt!
+
+But imagine if our Index already knew the value of the `email` column. There would be no need to lookup this row in the `people` table, and because the Index could respond immediately, the amount of time the query takes to complete would be significantly reduced.
+
+Well, that's exactly what a Covering Index is! So, let's turn our regular Index into a Covering Index that also knows peoples' emails:
+
+```sql
+create index
+  on people (username)
+  include (email)
+```
+
+Now, our Index can satisfy the entire query, without needing to lookup the `people` table, meaning our queries will be much more performant! But how do we know how much faster? Let's benchmark our performance improvements.
+
+## Benchmarking Performance
+
+In PostgreSQL, you can prepend `explain analyze` onto any query to measure how long it takes to complete:
+
+```sql
+explain analyze
+  select username, email
+    from people
+    where username = 'jon'
+```
+
+This command provides detailed information about the execution plan and time taken, allowing you to see the performance improvement.
+
+In the case of this example, it went from around 17 seconds, down to just over a millisecond!
+
+HUGE performance increase! And with like one line of SQL! 🤯
+
+## Conclusion
+
+Indexes, especially Covering Indexes, are extremely powerful tools for optimizing database performance. By understanding how to create and use them effectively, you can drastically reduce query times and improve the responsiveness of your applications. Try applying these techniques to your own projects and experience the difference!
+
+import CTA from "../../../components/CTA.astro";
+
+<CTA />
