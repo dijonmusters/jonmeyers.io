@@ -1,0 +1,114 @@
+---
+title: Build Awesome Apps Easily with Lovable
+og_title: Build Awesome Apps Easily with Lovable
+description: Do you want to build apps quickly? Lovable can help. It lets you make complex apps that solve real problems. This guide shows how to use Lovable to create a music app. This app sends notes to a synthesizer, so you can play music in real-time.
+published_date: 2025-06-27
+tags:
+  - Lovable
+  - AI Coding
+---
+
+import YouTubeVideo from "../../../components/YouTubeVideo.astro";
+
+<YouTubeVideo id="-_WAcIkXdhs" />
+
+Do you want to build apps quickly? Lovable can help. It lets you make complex apps that solve real problems. This guide shows how to use Lovable to create a music app. This app sends notes to a synthesizer, so you can play music in real-time. Watch the video above for the full example.
+
+## Plan Before You Code
+
+Before you start coding, it's important to plan. A good plan helps you build the right app. It also saves you time and frustration.
+
+Here's what you need to do:
+
+1. Define the goal: Know what your app should do.
+2. Describe the user experience: How will people use your app?
+3. Design the look: What should your app look like?
+
+## Create a Music App with Lovable
+
+Let's build a music app that does the following:
+
+- Pick chords
+- Select scales (major, minor, etc.)
+- Shift octaves
+- Sequence chords into a song
+- Download/export MIDI files
+
+### Start with a Detailed Plan
+
+Instead of jumping right into coding, start with a detailed plan. This plan should cover the app's overview, design, and features. It should also include an implementation plan with the main components and dependencies.
+
+Lovable can help you create this plan. Just give it some basic information about your app, and it will do the research for you!
+
+#### Example Prompt:
+
+```
+# Goal
+
+Write a detailed plan for creating an app. Do not write any code yet!
+
+# Functionality
+
+This app will be a chord picker for helping with inspiration for writing songs.
+
+## Choose MIDI device
+
+On page load, show a MIDI device picker. This should dynamically detect which MIDI devices are available.
+
+## Pick a scale
+
+Once the user has selected a MIDI device, they can pick a scale from a dropdown list - this should have a random button to randomise the scale.
+
+## Chords
+
+Now, present the user with the standard Diatonic chords in that scale. Clicking the chord should play it on the selected MIDI device. Clicking another chord should stop any currently playing notes and play the new chord.
+
+## Shift octaves
+Add a button to shift the octave of the currently selected chord up or down.
+
+## Sequence chords
+
+Add a button to sequence the currently selected chord into a song. This should add the chord to a list of chords that the user can edit. The user can add, remove, and reorder chords in this list. The user can also play the entire sequence of chords, which will play each chord in the sequence on the selected MIDI device. Also, add a stop button so the user can stop any currently playing notes.
+
+## Download/export MIDI
+
+Add a button to download the current sequence of chords as a MIDI file.
+
+# Design
+
+This should have a modern, minimalistic, dark mode UI. Use Tailwind and Shadcn where possible.
+```
+
+### Let Lovable Build the App
+
+Once you have a plan, Lovable can quickly and more accurately generate the app. This is because you took the time to plan first.
+
+#### Handing Errors
+
+When you run into errors, Lovable can help! Feed the error message back to Lovable, and it will suggest fixes. You don't need to clean up the error message; just paste it in and ask Lovable to fix it.
+
+If you end up in a loop with similar errors, you can ask Loveable to:
+
+```
+> Think of three solutions to fix this error and provide me with a summary of why you think it's a good solution.
+```
+
+This stops Lovable from trying the same thing over and over. Instead, it will research and summarize different options and you can choose the best one to try.
+
+You can also provide more context to help Lovable understand the problem better. You can:
+
+- Share links to documentation
+- Take screenshots of the broken app
+- Describe in more detail what you expected to happen versus what actually happened
+
+### Steps for building better apps
+
+1. Plan first: A good plan is important for building apps.
+2. Iterate: Work on your app in small steps.
+3. Debug: Fix errors as they come up.
+4. Launch: Deploy to production right from Lovable UI
+5. Repeat: Keep planning, iterating, debugging and launching features
+
+import CTA from "../../../components/CTA.astro";
+
+<CTA />
